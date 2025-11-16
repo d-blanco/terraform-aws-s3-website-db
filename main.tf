@@ -4,6 +4,12 @@ resource "aws_s3_bucket" "s3_bucket" {
   tags = var.tags
 }
 
+module "aws-s3-static-website-bucket-db" {
+  source  = "app.terraform.io/policy-as-code-training/aws-s3-static-website-bucket-db/aws"
+  version = "1.0.0"
+  bucket_name = "asfasfasgljaslgjasjgashhh"
+}
+
 resource "aws_s3_bucket_cors_configuration" "s3_bucket" {
   bucket = aws_s3_bucket.s3_bucket.id  
 
